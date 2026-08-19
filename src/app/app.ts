@@ -8,4 +8,10 @@ import { UiComponents } from '../../projects/ui-components/src/lib/ui-components
   styleUrl: './app.css'
 })
 export class App {
+  theme: 'light' | 'dark' = 'light';
+
+  setTheme(theme: 'light' | 'dark') {
+    this.theme = theme;
+    document.documentElement.dataset['theme'] = theme;
+  }
 }

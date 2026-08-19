@@ -18,7 +18,13 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Angular UI Component Library');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Build interfaces');
     expect(compiled.querySelector('lib-ui-components')).toBeTruthy();
+  });
+
+  it('switches themes', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.setTheme('dark');
+    expect(fixture.componentInstance.theme).toBe('dark');
   });
 });

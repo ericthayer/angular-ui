@@ -1,6 +1,6 @@
 # angular-ui
 
-Angular 20 workspace configured as a Vite-powered Angular application (`ng serve`) with a `ui-components` library.
+Angular 22 workspace configured as a Vite-powered Angular application (`ng serve`) with a `ui-components` library and a deployable reference site.
 
 ## Design tokens and theming
 
@@ -28,3 +28,7 @@ npm run tokens:sync
 npm run build:lib
 npm test
 ```
+
+## Reference site
+
+The application is a live preview of the component library, including theme switching and component examples. Build it with `npm run build`; the output in `dist/angular-ui` can be deployed directly to Netlify. The `public/_redirects` file preserves Angular routes on refresh.
