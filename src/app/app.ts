@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { UiComponents } from 'ui-components';
+import { UiButton } from 'ui-components';
 
 @Component({
   selector: 'app-root',
-  imports: [UiComponents],
+  imports: [UiButton],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

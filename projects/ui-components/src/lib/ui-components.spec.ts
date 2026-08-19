@@ -25,6 +25,7 @@ describe('UiComponents', () => {
     const button = fixture.nativeElement.querySelector('button.ui-button');
     expect(button).toBeTruthy();
     expect(button.textContent).toContain('UI Component Button');
+    expect(button.type).toBe('button');
   });
 
   it('should render the projected label', () => {

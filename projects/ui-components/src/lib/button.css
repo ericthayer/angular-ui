@@ -33,6 +33,36 @@
   color: var(--ui-button-foreground);
 }
 
+.ui-button--secondary {
+  --ui-button-background: #64748b;
+  --ui-button-foreground: #ffffff;
+}
+
+.ui-button--success {
+  --ui-button-background: #16a34a;
+  --ui-button-foreground: #ffffff;
+}
+
+.ui-button--info {
+  --ui-button-background: #0284c7;
+  --ui-button-foreground: #ffffff;
+}
+
+.ui-button--warn {
+  --ui-button-background: #d97706;
+  --ui-button-foreground: #ffffff;
+}
+
+.ui-button--danger {
+  --ui-button-background: #dc2626;
+  --ui-button-foreground: #ffffff;
+}
+
+.ui-button--contrast {
+  --ui-button-background: #1e293b;
+  --ui-button-foreground: #ffffff;
+}
+
 .ui-button--solid:not(:disabled):hover {
   filter: brightness(0.92);
 }
