@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
+import { UiButton } from './button';
 
 @Component({
   selector: 'lib-ui-components',
-  imports: [],
+  imports: [UiButton],
   template: `
-    <button class="ui-button" type="button">
-      <ng-content>UI Component Button</ng-content>
-    </button>
+    <lib-button><ng-content>UI Component Button</ng-content></lib-button>
   `,
-  styleUrl: './ui-components.css',
 })
 export class UiComponents {
 }
