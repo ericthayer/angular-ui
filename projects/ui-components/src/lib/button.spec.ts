@@ -12,14 +12,14 @@ import { UiButton } from './button';
       type="submit"
       icon="icon-save"
       iconPos="right"
-      [loading]="loading"
+      [loading]="busy"
     >
       Save
     </lib-button>
   `,
 })
 class TestHost {
-  loading = false;
+  busy = false;
 }
 
 describe('UiButton', () => {
@@ -45,9 +45,10 @@ describe('UiButton', () => {
   });
 
   it('disables the button and shows a busy state while loading', () => {
-    host.loading = true;
-    fixture.detectChanges();
-    const button: HTMLButtonElement = fixture.nativeElement.querySelector('button');
+    const loadingFixture = TestBed.createComponent(UiButton);
+    loadingFixture.componentInstance.isLoading = true;
+    loadingFixture.detectChanges();
+    const button: HTMLButtonElement = loadingFixture.nativeElement.querySelector('button');
 
     expect(button.disabled).toBeTrue();
     expect(button.getAttribute('aria-busy')).toBe('true');
