@@ -16,7 +16,7 @@
     "module": "preserve",
     "paths": {
       "ui-components": [
-        "./dist/ui-components"
+        "./projects/ui-components/src/public-api.ts"
       ]
     }
   },

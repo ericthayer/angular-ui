@@ -4,8 +4,8 @@ Angular 22 workspace configured as a Vite-powered Angular application (`ng serve
 
 ## Design tokens and theming
 
-- W3C token source: `/home/runner/work/angular-ui/angular-ui/projects/ui-components/src/lib/styles/design-tokens.json`
-- Generated CSS variables: `/home/runner/work/angular-ui/angular-ui/projects/ui-components/src/lib/styles/theme.css`
+- W3C token source: `projects/ui-components/src/lib/styles/design-tokens.json`
+- Generated CSS variables: `projects/ui-components/src/lib/styles/theme.css`
 - The library component consumes theme variables with `var(--ui-...)`.
 
 Generate CSS variables from tokens:

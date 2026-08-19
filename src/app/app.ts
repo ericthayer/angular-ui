@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UiComponents } from '../../projects/ui-components/src/lib/ui-components';
+import { UiComponents } from 'ui-components';
 
 @Component({
   selector: 'app-root',

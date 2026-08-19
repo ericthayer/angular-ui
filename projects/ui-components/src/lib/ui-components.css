@@ -1,5 +1,3 @@
-@import './styles/theme.css';
-
 .ui-button {
   border: 0;
   border-radius: var(--ui-radius-md);
