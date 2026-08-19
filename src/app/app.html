@@ -1,0 +1,74 @@
+<div class="site-shell" [attr.data-theme]="theme">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Angular UI home">
+      <span class="brand-mark">A</span>
+      <span>angular<span class="brand-muted">/ui</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#components">Components</a>
+      <a href="#tokens">Tokens</a>
+      <a href="https://github.com/ericthayer/angular-ui" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+    <div class="theme-switcher" aria-label="Theme">
+      <button type="button" [class.active]="theme === 'light'" (click)="setTheme('light')">Light</button>
+      <button type="button" [class.active]="theme === 'dark'" (click)="setTheme('dark')">Dark</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ANGULAR COMPONENT LIBRARY <span>•</span> v0.0.1</div>
+      <h1>Build interfaces<br /><em>with intention.</em></h1>
+      <p class="hero-copy">A small, thoughtful collection of Angular components built on design tokens. Explore the library, see it in action, and make it yours.</p>
+      <div class="hero-actions">
+        <a class="primary-action" href="#components">Explore components <span>↓</span></a>
+        <a class="text-action" href="#install">View installation <span>→</span></a>
+      </div>
+      <div class="hero-note"><span class="status-dot"></span> Built for Angular 22 · Accessible by default</div>
+    </section>
+
+    <section id="components" class="showcase">
+      <div class="section-heading">
+        <div><span class="section-number">01</span><h2>Components</h2></div>
+        <p>Simple primitives for expressive products.</p>
+      </div>
+      <div class="component-grid">
+        <article class="preview-card featured-card">
+          <div class="card-label">BUTTON / PRIMARY</div>
+          <div class="preview-stage">
+            <lib-ui-components>Get started <span>→</span></lib-ui-components>
+          </div>
+          <div class="card-footer"><code>&lt;lib-ui-components&gt;</code><span>↗</span></div>
+        </article>
+        <article class="preview-card">
+          <div class="card-label">BUTTON / STATES</div>
+          <div class="preview-stage states">
+            <button class="outline-button" type="button">Secondary</button>
+            <button class="quiet-button" type="button">Quiet action</button>
+          </div>
+          <div class="card-footer"><code>ui-button variants</code><span>↗</span></div>
+        </article>
+        <article class="preview-card">
+          <div class="card-label">COLOR / TOKENS</div>
+          <div class="preview-stage swatches">
+            <span class="swatch swatch-primary"></span><span class="swatch swatch-ink"></span><span class="swatch swatch-surface"></span>
+            <div><strong>Design tokens</strong><small>Consistent by design.</small></div>
+          </div>
+          <div class="card-footer"><code>--ui-color-*</code><span>↗</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tokens" class="token-callout">
+      <span class="section-number">02</span>
+      <div><h2>Tokens that speak<br /><em>the same language.</em></h2><p>Every component is powered by a shared vocabulary of color, spacing, and shape.</p></div>
+      <a class="circle-arrow" href="#install" aria-label="Read about installation">↗</a>
+    </section>
+
+    <section id="install" class="install-section">
+      <div class="section-heading"><div><span class="section-number">03</span><h2>Start building</h2></div></div>
+      <pre><span class="code-muted">npm</span> install ui-components</pre>
+    </section>
+  </main>
+  <footer><span>© 2026 Angular UI</span><span>Made for the web, thoughtfully.</span></footer>
+</div>

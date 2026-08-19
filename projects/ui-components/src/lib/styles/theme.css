@@ -1,0 +1,14 @@
+:root, [data-theme="light"] {
+  --ui-color-brand-primary: #2563eb;
+  --ui-color-brand-on-primary: #ffffff;
+  --ui-spacing-sm: 0.5rem;
+  --ui-spacing-md: 0.75rem;
+  --ui-radius-md: 0.5rem;
+  --ui-button-background: #2563eb;
+  --ui-button-foreground: #ffffff;
+}
+
+[data-theme="dark"] {
+  --ui-button-background: #60a5fa;
+  --ui-button-foreground: #0f172a;
+}
