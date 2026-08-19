@@ -1,0 +1,11 @@
+@import './styles/theme.css';
+
+.ui-button {
+  border: 0;
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-button-background);
+  color: var(--ui-button-foreground);
+  padding: var(--ui-spacing-sm) var(--ui-spacing-md);
+  cursor: pointer;
+  font: inherit;
+}

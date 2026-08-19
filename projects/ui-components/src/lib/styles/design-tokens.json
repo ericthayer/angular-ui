@@ -1,0 +1,57 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "brand": {
+      "primary": {
+        "$type": "color",
+        "$value": "#2563eb"
+      },
+      "onPrimary": {
+        "$type": "color",
+        "$value": "#ffffff"
+      }
+    }
+  },
+  "spacing": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "0.75rem"
+    }
+  },
+  "radius": {
+    "md": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    }
+  },
+  "theme": {
+    "light": {
+      "button": {
+        "background": {
+          "$type": "color",
+          "$value": "#2563eb"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "#ffffff"
+        }
+      }
+    },
+    "dark": {
+      "button": {
+        "background": {
+          "$type": "color",
+          "$value": "#60a5fa"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "#0f172a"
+        }
+      }
+    }
+  }
+}
