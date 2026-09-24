@@ -24,12 +24,10 @@ class TestHost {
 
 describe('UiButton', () => {
   let fixture: ComponentFixture<TestHost>;
-  let host: TestHost;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({ imports: [TestHost] }).compileComponents();
     fixture = TestBed.createComponent(TestHost);
-    host = fixture.componentInstance;
     fixture.detectChanges();
   });
 
@@ -46,6 +44,8 @@ describe('UiButton', () => {
 
   it('disables the button and shows a busy state while loading', () => {
     const loadingFixture = TestBed.createComponent(UiButton);
+    loadingFixture.componentInstance.icon = 'icon-save';
+    loadingFixture.componentInstance.iconPos = 'right';
     loadingFixture.componentInstance.isLoading = true;
     loadingFixture.detectChanges();
     const button: HTMLButtonElement = loadingFixture.nativeElement.querySelector('button');

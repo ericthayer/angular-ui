@@ -9,8 +9,7 @@ export type ButtonSize = 'small' | 'large';
   standalone: true,
   template: `
     <button
-      class="ui-button"
-      [class]="'ui-button--' + severity + ' ui-button--' + variant + (size ? ' ui-button--' + size : '')"
+      [class]="'ui-button ui-button--' + severity + ' ui-button--' + variant + (size ? ' ui-button--' + size : '')"
       [attr.type]="type"
       [attr.aria-label]="ariaLabel || null"
       [attr.aria-busy]="isLoading ? 'true' : null"
@@ -19,11 +18,11 @@ export type ButtonSize = 'small' | 'large';
       @if (isLoading) {
         <span class="ui-button__spinner" aria-hidden="true"></span>
       } @else if (icon && iconPos === 'left') {
-        <span class="ui-button__icon" [class]="icon" aria-hidden="true"></span>
+        <span [class]="'ui-button__icon ' + icon" aria-hidden="true"></span>
       }
       <span class="ui-button__label"><ng-content /></span>
       @if (!isLoading && icon && iconPos === 'right') {
-        <span class="ui-button__icon" [class]="icon" aria-hidden="true"></span>
+        <span [class]="'ui-button__icon ' + icon" aria-hidden="true"></span>
       }
     </button>
   `,
