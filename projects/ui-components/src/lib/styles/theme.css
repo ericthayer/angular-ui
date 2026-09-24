@@ -6,9 +6,17 @@
   --ui-radius-md: 0.5rem;
   --ui-button-background: #2563eb;
   --ui-button-foreground: #ffffff;
+  --ui-overlay-background: #ffffff;
+  --ui-overlay-foreground: #0f172a;
+  --ui-overlay-border: #e2e8f0;
+  --ui-overlay-hover: #f1f5f9;
 }
 
 [data-theme="dark"] {
   --ui-button-background: #60a5fa;
   --ui-button-foreground: #0f172a;
+  --ui-overlay-background: #1e293b;
+  --ui-overlay-foreground: #f1f5f9;
+  --ui-overlay-border: #334155;
+  --ui-overlay-hover: #2b3a50;
 }

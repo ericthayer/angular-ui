@@ -39,6 +39,24 @@
           "$type": "color",
           "$value": "#ffffff"
         }
+      },
+      "overlay": {
+        "background": {
+          "$type": "color",
+          "$value": "#ffffff"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "#0f172a"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "#e2e8f0"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#f1f5f9"
+        }
       }
     },
     "dark": {
@@ -50,6 +68,24 @@
         "foreground": {
           "$type": "color",
           "$value": "#0f172a"
+        }
+      },
+      "overlay": {
+        "background": {
+          "$type": "color",
+          "$value": "#1e293b"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "#f1f5f9"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "#334155"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#2b3a50"
         }
       }
     }

@@ -1,0 +1,90 @@
+<button
+  type="button"
+  [id]="defaultButtonId"
+  [class]="buttonClasses() + ' ui-split-button__default'"
+  [attr.aria-label]="ariaLabel() ?? null"
+  [disabled]="disabled() || buttonDisabled()"
+  (click)="buttonClick.emit($event)"
+>
+  @if (icon() && iconPos() === 'left') {
+    <span [class]="'ui-button__icon ' + icon()" aria-hidden="true"></span>
+  }
+  <span class="ui-button__label">{{ label() }}<ng-content /></span>
+  @if (icon() && iconPos() === 'right') {
+    <span [class]="'ui-button__icon ' + icon()" aria-hidden="true"></span>
+  }
+</button>
+<button
+  #toggle
+  type="button"
+  [class]="buttonClasses() + ' ui-split-button__toggle'"
+  aria-haspopup="menu"
+  [attr.aria-expanded]="open()"
+  [attr.aria-controls]="menuId"
+  [attr.aria-label]="expandAriaLabel()"
+  [attr.popovertarget]="menuId"
+  [disabled]="disabled() || menuButtonDisabled()"
+  (click)="onToggleClick($event)"
+  (keydown)="onToggleKeydown($event)"
+>
+  @if (dropdownIcon(); as dropdownIconClass) {
+    <span [class]="'ui-button__icon ' + dropdownIconClass" aria-hidden="true"></span>
+  } @else {
+    <svg class="ui-split-button__chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  }
+</button>
+<ul
+  #menu
+  popover="auto"
+  role="menu"
+  class="ui-split-button__menu"
+  [id]="menuId"
+  [attr.aria-labelledby]="defaultButtonId"
+  [attr.data-placement]="placement()"
+  (toggle)="onMenuToggle($event)"
+  (keydown)="onMenuKeydown($event)"
+>
+  @for (item of visibleItems(); track $index) {
+    @if (item.separator) {
+      <li role="separator" class="ui-split-button__separator"></li>
+    } @else {
+      <li role="none">
+        @if (item.url) {
+          <a
+            #menuItem
+            role="menuitem"
+            class="ui-split-button__item"
+            tabindex="-1"
+            [attr.href]="item.disabled ? null : item.url"
+            [attr.target]="item.target ?? null"
+            [attr.rel]="item.target === '_blank' ? 'noopener noreferrer' : null"
+            [attr.aria-disabled]="item.disabled ? 'true' : null"
+            (click)="selectItem(item, $event)"
+          >
+            @if (item.icon) {
+              <span [class]="'ui-split-button__item-icon ' + item.icon" aria-hidden="true"></span>
+            }
+            <span class="ui-split-button__item-label">{{ item.label }}</span>
+          </a>
+        } @else {
+          <button
+            #menuItem
+            type="button"
+            role="menuitem"
+            class="ui-split-button__item"
+            tabindex="-1"
+            [attr.aria-disabled]="item.disabled ? 'true' : null"
+            (click)="selectItem(item, $event)"
+          >
+            @if (item.icon) {
+              <span [class]="'ui-split-button__item-icon ' + item.icon" aria-hidden="true"></span>
+            }
+            <span class="ui-split-button__item-label">{{ item.label }}</span>
+          </button>
+        }
+      </li>
+    }
+  }
+</ul>

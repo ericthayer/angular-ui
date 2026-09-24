@@ -1,0 +1,118 @@
+/* Layered on top of button.css so both segments inherit every severity/variant/size rule. */
+:host {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.ui-button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+.ui-split-button__default {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.ui-split-button__toggle {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  padding-inline: var(--ui-spacing-sm);
+}
+
+.ui-split-button__toggle.ui-button--solid {
+  border-inline-start-color: color-mix(in srgb, var(--ui-button-foreground) 35%, transparent);
+}
+
+.ui-split-button__toggle.ui-button--outlined {
+  margin-inline-start: -1px;
+}
+
+.ui-split-button__toggle.ui-button--small {
+  padding-inline: 0.375rem;
+}
+
+.ui-split-button__chevron {
+  width: 1rem;
+  height: 1rem;
+  transition: rotate 0.15s ease;
+}
+
+[aria-expanded='true'] > .ui-split-button__chevron {
+  rotate: 180deg;
+}
+
+.ui-split-button__menu {
+  position: fixed;
+  inset: auto;
+  top: var(--ui-split-button-menu-top, 0);
+  left: var(--ui-split-button-menu-left, 0);
+  min-width: max(var(--ui-split-button-menu-min-width, 0px), 10rem);
+  max-height: min(24rem, calc(100vh - 1rem));
+  margin: 0;
+  padding: 0.25rem;
+  overflow-y: auto;
+  list-style: none;
+  background: var(--ui-overlay-background);
+  color: var(--ui-overlay-foreground);
+  border: 1px solid var(--ui-overlay-border);
+  border-radius: var(--ui-radius-md);
+  box-shadow: 0 10px 30px -12px rgb(15 23 42 / 0.35);
+  font: inherit;
+}
+
+.ui-split-button__item {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--ui-radius-md) - 0.125rem);
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: var(--ui-spacing-sm);
+  min-height: 2.25rem;
+  padding: var(--ui-spacing-sm) var(--ui-spacing-md);
+  text-align: start;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ui-split-button__item:hover,
+.ui-split-button__item:focus {
+  background: var(--ui-overlay-hover);
+  outline: none;
+}
+
+.ui-split-button__item:focus-visible {
+  outline: 2px solid var(--ui-color-brand-primary);
+  outline-offset: -2px;
+}
+
+.ui-split-button__item[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ui-split-button__item[aria-disabled='true']:hover {
+  background: transparent;
+}
+
+.ui-split-button__item-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.ui-split-button__separator {
+  background: var(--ui-overlay-border);
+  height: 1px;
+  margin: 0.25rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-split-button__chevron {
+    transition: none;
+  }
+}
