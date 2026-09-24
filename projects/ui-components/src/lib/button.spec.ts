@@ -45,10 +45,9 @@ describe('UiButton', () => {
   });
 
   it('disables the button and shows a busy state while loading', () => {
-    const loadingFixture = TestBed.createComponent(UiButton);
-    loadingFixture.componentInstance.isLoading = true;
-    loadingFixture.detectChanges();
-    const button: HTMLButtonElement = loadingFixture.nativeElement.querySelector('button');
+    host.busy = true;
+    fixture.detectChanges();
+    const button: HTMLButtonElement = fixture.nativeElement.querySelector('button');
 
     expect(button.disabled).toBeTrue();
     expect(button.getAttribute('aria-busy')).toBe('true');
