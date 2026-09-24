@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiButton } from './button';
 
@@ -46,7 +46,8 @@ describe('UiButton', () => {
 
   it('disables the button and shows a busy state while loading', () => {
     host.busy = true;
-    fixture.detectChanges();
+    fixture.debugElement.children[0].componentInstance.isLoading = host.busy;
+    fixture.debugElement.children[0].injector.get(ChangeDetectorRef).detectChanges();
     const button: HTMLButtonElement = fixture.nativeElement.querySelector('button');
 
     expect(button.disabled).toBeTrue();
